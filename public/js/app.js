@@ -19,7 +19,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value;
     const url = "/weather?city=" + location;
     fetch(url).then((response) => {
-        if (response.json()) {
+        try {
             response.json().then((data) => {
                 if (data.error) {
                     console.log(data.error)
@@ -30,11 +30,11 @@ weatherForm.addEventListener('submit', (e) => {
                     messageOne.textContent = JSON.stringify(data);
                 }
             })
-        }
-        else {
+        } catch (error) {
             messageOne.textContent = response;
-            console.log(response);
+            console.log(error)
         }
+
     }).catch((error) => {
         messageOne.textContent = response;
         console.log(error)
