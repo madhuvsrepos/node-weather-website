@@ -40,7 +40,7 @@ weatherApi = {
                 }
                 else {
                     const data = response.body
-                    if(data.features && data.features.lenth > 0){
+                    if(data.features && data.features.length > 0){
                     console.log(`Latitude and Longitude for the place ${data.features[0].place_name} are  ${data.features[0].center[1]} and ${data.features[0].center[0]}`)
                     const coordinates = { place: data.features[0].place_name, latitude: data.features[0].center[1], longitude: data.features[0].center[0] }
                     weatherFinder(null, coordinates, callback);
