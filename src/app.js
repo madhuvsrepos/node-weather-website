@@ -4,7 +4,7 @@ const geocode = require('./utils/geocode.js')
 const hbs = require('hbs')
 const app = express()
 const port = process.env.PORT || 3000
-
+console.log('test')
 //define paths for Express config
 const publicDirectoryPath = path.join(__dirname,'../public')
 //views is the default folder hbs looks for if you want to use a a different folder do then set it explicitly
